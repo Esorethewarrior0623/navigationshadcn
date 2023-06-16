@@ -6,8 +6,6 @@ import * as SecureStore from "expo-secure-store";
 import { SupabaseContext } from "./SupabaseContext";
 import { SupabaseClient } from '@supabase/supabase-js';
 
-const supabaseUrl = "https://ephqkuiishssehevnmnt.supabase.co"
-const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVwaHFrdWlpc2hzc2VoZXZubW50Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ4ODY2MzYsImV4cCI6MjAwMDQ2MjYzNn0.xVW940pTjwXxoOWtnlsSzsE8O-TnaFz-9rYP4Tc1SKY"
 
 
 
