@@ -7,6 +7,8 @@ import { SupabaseContext } from "./SupabaseContext";
 import { SupabaseClient } from '@supabase/supabase-js';
 
 
+const supabaseUrl = ""
+const supabaseAnonKey = ""
 
 
 // We are using Expo Secure Store to persist session info
