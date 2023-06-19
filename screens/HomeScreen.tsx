@@ -23,7 +23,7 @@ const HomeScreen = () => {
 
   const fetchData = async () => {
     try {
-      const { data, error } = await supabase.from('account').select('account_name, account_id, account_profile_picture', ).limit(5);
+      const { data, error } = await supabase.from('account').select('account_name, account_id, account_profile_picture, image_url', ).limit(5);
       console.log(data)
       if (error) {
         console.error(error);
@@ -44,7 +44,7 @@ const HomeScreen = () => {
       account_id={item.account_id}
       account_name={item.account_name}
       navigateToBusinessDetails={navigateToBusinessDetails}
-      url={item.account_profile_picture}
+      url={item.image_url}
     />
   );
   

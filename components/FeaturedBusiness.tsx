@@ -13,42 +13,15 @@ type FeaturedBusinessProps = {
 
 const FeaturedBusiness: React.FC<FeaturedBusinessProps> = ({url, account_id, account_name, navigateToBusinessDetails }) => {
 
-  const [imageUrl, setImageUrl] = useState<string | null>(null)
 
-  useEffect(() => {
-    if (url) downloadImage(url)
-  }, [url])
 
-  async function downloadImage(path: string) {
-    try {
-      const storageBaseURL=`https://ephqkuiishssehevnmnt.supabase.co`
-      const imageUrl = `${storageBaseURL}/storage/v1/object/public/account_profile_picture/${path}`
-      console.log(path)
-      console.log(imageUrl)
-      const { data, error } = await supabase.storage.from('account_profile_picture').download(path)
-     
-      if (error) {
-        throw error
-      }
-
-      const fr = new FileReader()
-      fr.readAsDataURL(data)
-      fr.onload = () => {
-        setImageUrl(imageUrl)
-
-      }
-    } catch (error) {
-      if (error instanceof Error) {
-        console.log('Error downloading image: ', error.message)
-      }
-    }
-  }
 
 
   return (
     <View style={styles.container}>
       <Pressable style={styles.pressable} onPress={() => navigateToBusinessDetails(account_id)}>
-      {imageUrl && <Image source={{uri: imageUrl}} />}      
+      <Image style={styles.image}
+      source={{uri:url!}} />      
       <Text>{account_name}</Text>
       </Pressable>
     </View>
@@ -73,7 +46,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  picture: {
-
+  image: {
+    height: 200,
+    width: 200,
+    
   }
 });

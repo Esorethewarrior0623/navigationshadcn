@@ -7,11 +7,11 @@ import { SupabaseContext } from "./SupabaseContext";
 import { SupabaseClient } from '@supabase/supabase-js';
 
 
-const supabaseUrl = ""
-const supabaseAnonKey = ""
+const supabaseUrl = "https://ephqkuiishssehevnmnt.supabase.co"
+const supabaseAnonKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVwaHFrdWlpc2hzc2VoZXZubW50Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2ODQ4ODY2MzYsImV4cCI6MjAwMDQ2MjYzNn0.xVW940pTjwXxoOWtnlsSzsE8O-TnaFz-9rYP4Tc1SKY"
 
 
-// We are using Expo Secure Store to persist session info
+// We are using Expo Secure Store to persist session r
 const ExpoSecureStoreAdapter = {
   getItem: (key: string) => {
     return SecureStore.getItemAsync(key);
@@ -27,7 +27,7 @@ const ExpoSecureStoreAdapter = {
 type SupabaseProviderProps = {
   children: JSX.Element | JSX.Element[];
 };
-
+//Database using api 
 export const supabase: SupabaseClient = createClient(
   supabaseUrl,
   supabaseAnonKey,
